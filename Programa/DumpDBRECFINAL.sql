@@ -32,7 +32,7 @@ CREATE TABLE `tb_avaliacao` (
   KEY `idMusica` (`idMusica`),
   CONSTRAINT `tb_avaliacao_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `tb_usuario` (`idUsuario`),
   CONSTRAINT `tb_avaliacao_ibfk_2` FOREIGN KEY (`idMusica`) REFERENCES `tb_musica` (`idMusica`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `tb_avaliacao` (
 
 LOCK TABLES `tb_avaliacao` WRITE;
 /*!40000 ALTER TABLE `tb_avaliacao` DISABLE KEYS */;
-INSERT INTO `tb_avaliacao` VALUES (1,1,1,5),(2,1,20,5),(3,1,7,3),(5,2,2,2),(6,3,2,5),(7,NULL,NULL,3),(8,NULL,NULL,2),(9,NULL,NULL,4),(10,NULL,NULL,4);
+INSERT INTO `tb_avaliacao` VALUES (1,1,1,5),(2,1,20,5),(3,1,7,3),(5,2,2,2),(6,3,2,5),(11,1,3,4),(12,5,3,5),(14,12,2,5),(15,12,3,5),(16,12,4,4);
 /*!40000 ALTER TABLE `tb_avaliacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +85,7 @@ CREATE TABLE `tb_genero` (
   `idGenero` int NOT NULL AUTO_INCREMENT,
   `tipo` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idGenero`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `tb_genero` (
 
 LOCK TABLES `tb_genero` WRITE;
 /*!40000 ALTER TABLE `tb_genero` DISABLE KEYS */;
-INSERT INTO `tb_genero` VALUES (1,'Rock'),(2,'Clássico'),(3,'Pop'),(4,'Blues');
+INSERT INTO `tb_genero` VALUES (1,'Rock'),(2,'Clássico'),(3,'Pop'),(4,'Blues'),(5,'Jazz'),(6,'Eletronica'),(7,'MPB');
 /*!40000 ALTER TABLE `tb_genero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +115,7 @@ CREATE TABLE `tb_generofavorito` (
   KEY `idGenero` (`idGenero`),
   CONSTRAINT `tb_generofavorito_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `tb_usuario` (`idUsuario`),
   CONSTRAINT `tb_generofavorito_ibfk_2` FOREIGN KEY (`idGenero`) REFERENCES `tb_genero` (`idGenero`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `tb_generofavorito` (
 
 LOCK TABLES `tb_generofavorito` WRITE;
 /*!40000 ALTER TABLE `tb_generofavorito` DISABLE KEYS */;
-INSERT INTO `tb_generofavorito` VALUES (1,1,1,'2020-11-27');
+INSERT INTO `tb_generofavorito` VALUES (7,1,3,'2020-11-30'),(9,1,5,'2020-11-30'),(10,5,1,'2020-11-30'),(11,5,3,'2020-11-30'),(12,5,6,'2020-11-30'),(16,11,1,'2020-11-30'),(17,11,3,'2020-11-30'),(18,12,1,'2020-11-30'),(19,12,5,'2020-11-30');
 /*!40000 ALTER TABLE `tb_generofavorito` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +164,7 @@ CREATE TABLE `tb_usuario` (
   `login` varchar(200) DEFAULT NULL,
   `Senha` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `tb_usuario` (
 
 LOCK TABLES `tb_usuario` WRITE;
 /*!40000 ALTER TABLE `tb_usuario` DISABLE KEYS */;
-INSERT INTO `tb_usuario` VALUES (1,'Giovana','123'),(2,'Ana','456'),(3,'Felipe','789'),(4,'Bella','222'),(5,'victor','6924'),(6,'Gabriel','147');
+INSERT INTO `tb_usuario` VALUES (1,'Giovana','123'),(2,'Ana','456'),(3,'Felipe','789'),(4,'Bella','222'),(5,'victor','6924'),(6,'Gabriel','147'),(9,'Feulinho ','123456'),(10,'Rose','147'),(11,'Jack','369'),(12,'Totoro','258');
 /*!40000 ALTER TABLE `tb_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-28 19:18:31
+-- Dump completed on 2020-11-30 21:25:23
